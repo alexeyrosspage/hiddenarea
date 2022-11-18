@@ -1,0 +1,1182 @@
+/*============================ RESET ============================*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video, main {
+    border: 0;
+    border-style: none;
+    font: inherit;
+    font-size: 100%;
+    margin: 0;
+    outline: 0;
+    padding: 0;
+    vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, main {
+    display: block;
+}
+
+body, html {height: 100%;}
+
+body {
+    background-color: white !important;
+    background-attachment: fixed;
+    color: black;
+    font-family: 'PT Sans','Trebuchet MS','Arial Narrow',Arial,sans-serif;
+    line-height: 1;
+}
+
+ol, ul {list-style: none;}
+
+blockquote, q {quotes: none;}
+
+blockquote::before,
+blockquote::after,
+q::before,
+q::after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+caption, th, td {
+    font-weight: normal;
+    text-align: left;
+}
+
+pre, code {
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: -pre-wrap;
+    white-space: -o-pre-wrap;
+    word-wrap: break-word;
+}
+
+.green {color: #008040;}
+.red {color: #c01111;}
+.blue {color: #0080C0;}
+.grey {color: #999999;}
+
+textarea {font-family:  'Arial Narrow', Arial, sans-serif;}
+
+.checkbox:not(checked),
+.radio:not(checked) {
+    opacity: 0;
+    position: absolute;
+}
+
+
+/*------------------------------------------------ END BLACKGROUND*/
+
+#jquery-overlay {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1050;
+}
+
+#jquery-overlay > i {
+    cursor: pointer;
+    display: block;
+    height: 40px;
+    opacity: .5;
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    width: 40px;
+}
+
+#jquery-overlay > i .pics_icons {
+    fill: #FFF;
+    display: block;
+    height: 40px;
+    margin: -20px auto auto -20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 40px;
+}
+
+#jquery-hiddenarea {
+    position: absolute;
+    top: 5em;
+    left: 0;
+    text-align: center;
+    width: 100%;
+    z-index: 1051;
+}
+
+#jquery-hiddenarea a img {border: none;}
+
+#hiddenarea-container-image-box {
+    height: 250px;
+    margin: 0 auto;
+    position: relative;
+    width: 250px;
+}
+
+#hiddenarea-loading {
+    height: 25%;
+    line-height: 0;
+    position: absolute;
+    top: 40%;
+    left: 0%;
+    text-align: center;
+    width: 100%;
+}
+
+#hiddenarea-nav {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+#hiddenarea-container-image-box > #hiddenarea-nav {left: 0;}
+
+#hiddenarea-nav a {
+    display: block;
+    height: 100%;
+    outline: none;
+    position: absolute;
+    zoom: 1;
+    z-index: 10;
+}
+
+#hiddenarea-nav-btnPrev,
+#hiddenarea-nav-btnNext {top: 0;}
+
+#hiddenarea-nav a::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 50%;
+}
+
+#hiddenarea-nav a::after {
+    border: 12px solid rgba(0,0,0,0);
+    margin-top: -12px;
+    z-index: 1;
+}
+
+#hiddenarea-nav-btnPrev::after {
+    border-left-width: 0 !important;
+    border-right-color: #d3ecf5 !important;
+    right: 46px;
+}
+
+#hiddenarea-nav-btnNext::after {
+    border-right-width: 0 !important;
+    border-left-color: #d3ecf5 !important;
+    left: 46px;
+}
+
+#hiddenarea-image {
+    height: auto;
+    max-width: 800px;
+    width: 100%;
+}
+
+#hiddenarea-secNav-btnClose {
+    height: 60px;
+    line-height: 60px;
+    position: absolute;
+    top: -60px;
+    left: 0;
+    text-align: center;
+    width: 100%;
+}
+
+#hiddenarea-secNav-btnClose > span {
+    color: #d3ecf5;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 1.1em;
+    font-weight: bold;
+    padding-right: 30px;
+    position: relative;
+    /*text-transform: uppercase;*/
+    vertical-align: middle;
+}
+
+#hiddenarea-secNav-btnClose > span > i {
+    cursor: pointer;
+    display: block;
+    height: 20px;
+    margin-top: -10px;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 20px;
+}
+
+#hiddenarea-secNav-btnClose > span > i .pics_icons {
+    fill: #d3ecf5;
+    display: block;
+    height: 20px;
+    margin: -10px auto auto -10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+}
+
+#hiddenarea-edit {
+    text-align: center;
+    vertical-align: middle;
+}
+
+#hiddenarea-edit > a {
+    display: inline-block;
+    font-size: 1.1em;
+    margin: 0 10px 10px 10px;
+    text-decoration: none;
+}
+
+#hiddenarea-edit > a#hiddenarea-rotate-right,
+#hiddenarea-edit > a#hiddenarea-rotate-left {
+    font-size: 1.4em;
+    margin: 0 5px;
+}
+
+#hiddenarea-edit > a#hiddenarea-rotate-left {margin-right: 20px;}
+
+/* --------------------------------- */
+
+.manual {
+    background: rgba(170,210,223,.25);
+    /*border: 1px dotted #eaf1f2;*/
+    border-radius: 10px;
+    color: #eaf1f2;
+    font-size: 1em;
+    line-height: 1.2em;
+    margin-top: 20px;
+    padding: 16px;
+    text-align: left;
+}
+
+.manual p {margin-top: 20px;}
+
+/*=================================================== END LIGHTBOX*/
+
+
+/*===================================================== QUICK-HINT*/
+
+.itips_view {
+    display:none;
+    height: 0;
+    position: absolute;
+    z-index: 60000;
+}
+
+.itips_view div {
+    background: #eef9ff;
+    border: 2px solid #006699;
+    border-radius: 6px;
+    box-shadow: 2px 2px 8px rgba(0,0,0,.2);
+    color: #030409;
+    font-size: 0.75em;
+    font-weight: bold;
+    line-height: 40px;
+    margin-left: -150px;
+    min-height: 40px;
+    opacity: 0.85;
+    padding: 10px 5px;
+    position: absolute;
+    bottom:4px;
+    left: 50%;
+    text-align: center;
+    width: 290px;
+}
+
+.itips_view div.left {border-radius: 6px 6px 6px 0;}
+
+.itips_view div.right {border-radius: 6px 6px 0 6px;}
+
+.itips_view div::before,
+.itips_view div::after {
+    border: 6px solid rgba(0,0,0,0);
+    border-bottom-width: 0;
+    border-top-width: 4px;
+    border-top-color: #eef9ff;
+    content: '';
+    display: block;
+    height: 0;
+    position: absolute;
+    bottom: -4px;
+    width: 0;
+}
+
+.itips_view div.center::before,
+.itips_view div.center::after {
+    margin-left: -6px;
+    left: 50%;
+}
+
+.itips_view div.center_up::before,
+.itips_view div.center_up::after {
+    border-top-width: 0;
+    border-bottom-width: 4px;
+    border-bottom-color: #eef9ff;
+    bottom: auto;
+    top: -4px;
+}
+
+.itips_view div.left::before,
+.itips_view div.left::after {
+    border-left-width: 0;
+    border-right-width: 11px;
+    left: 0;
+}
+
+.itips_view div.right::before,
+.itips_view div.right::after {
+    border-left-width: 11px;
+    border-right-width: 0;
+    right: 0;
+}
+
+.itips_view div::before {
+    border: 8px solid rgba(0,0,0,0);
+    border-bottom-width: 0;
+    border-top-width: 5px;
+    border-top-color: #006699;
+    bottom: -7px;
+}
+
+.itips_view div.center::before {
+    margin-left: -8px;
+    left: 50%;
+}
+
+.itips_view div.center_up::before {
+    border-top-width: 0;
+    border-bottom-width: 5px;
+    border-bottom-color: #006699;
+    bottom: auto;
+    top: -7px;
+}
+
+.itips_view div.left::before {
+    border-left-width: 0;
+    border-right-width: 15px;
+    left: -2px;
+}
+
+.itips_view div.right::before {
+    border-left-width: 15px;
+    border-right-width: 0;
+    right: -2px;
+}
+
+.itips_view div span {
+    display: inline-block;
+    line-height: 1em;
+    vertical-align: middle;
+}
+
+.itips_view div span a {
+    color: #229abf;
+    font-size: 1.05em;
+}
+
+/*================================================= END QUICK-HINT*/
+
+.hiddenarea {
+    min-height: 100%;
+    position: relative;
+    width: 100%;
+}
+
+.hiddenarea > div {padding: 2.78551532033426% 4.78551532033426% 4.78551532033426% 4.78551532033426%;}
+
+#lngs {
+    padding: 0 0 20px 0;
+    text-align: center;
+    vertical-align: middle;
+}
+
+#lngs > span {
+    border-radius: 5px;
+    color: #aed2dd;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: bold;
+    height: 18px;
+    line-height: 18px;
+    margin: 0 5px;
+    padding: 5px;
+    position: relative;
+    width: 20px;
+}
+
+#lngs > span.act {
+    background: #eaf1f2;
+    color: #5e7b94;
+    cursor: default;
+}
+
+#lngs > span::before {
+    border: 2px solid rgba(0,0,0,0);
+    border-radius: 5px;
+    content: '';
+    display: block;
+    height: 24px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 26px;
+}
+
+#lngs > span:not(.act):hover::before {border-color: #eaf1f2;}
+
+.description {
+    border: 2px solid #d4e5ea;
+    border-radius: 10px;
+    color: #5e7b94;
+    font-size: 1em;
+    margin: 0 auto 40px auto;
+    max-width: 800px;
+    padding: 18px;
+    text-align: center;
+}
+
+.description h1 {
+    font-size: 1.4em;
+    font-weight: bold;
+}
+
+.description h1 b {
+    /*color: #08637e;*/
+    color: #71abbd;
+    display: inline-block;
+    position: relative;
+}
+
+.description h1 b::before {
+    background: #d4e5ea;
+    content: "";
+    display: block;
+    filter: blur(10px);
+    height: 200%;
+    opacity: .5;
+    position: absolute;
+    top: -50%;
+    left: -5%;
+    width: 110%;
+}
+
+.description h1 b i {
+    display: inline-block;
+    position: relative;
+    z-index: 2;
+}
+
+.description p {
+    line-height: 1.3em;
+    margin-top: 30px;
+}
+
+.uploads {
+    background: #eaf1f2;
+    border-radius: 10px;
+    /*margin: 20px 2.94985250737463% 40px 2.94985250737463%;*/
+    margin: 0 auto;
+    max-width: 800px;
+    padding: 20px;
+    position: relative;
+}
+
+.uploads .error {margin-top: 40px;}
+
+.uploads > div {
+    overflow: hidden;
+    position: relative;
+}
+
+.uploads > p {
+    color: #5a778c;
+    font-weight: bold;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.uploads .chit {
+    font-size: 1em;
+}
+
+.uploads > p.coverhint strong {font-weight: bold;}
+
+.upload {
+    float: left;
+    margin-right: 3.72771474878444%;
+    position: relative;
+    width: 30.74433656957929%;
+    z-index: 5;
+}
+
+.upload:last-child {margin-right: 0;}
+
+.upload:only-child {
+    background: #eaf1f2;
+    float: none;
+    margin-right: auto;
+    width: 100%;
+}
+
+.upload > div {
+    height: 30px;
+    margin: 10px auto 0 auto;
+    min-height: 30px;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    width: 70px;
+    display: none;
+}
+
+.upload:only-child > div {
+    margin: 10px auto 0 auto;
+    width: 160px;
+}
+
+.upload > div span {display: inline-block;}
+
+.upload .checkbox:not(checked) + label {
+    background-color: #5e7b94;
+    border-radius: 3px;
+    cursor: pointer;
+    display: block !important;
+    height: 30px;
+    line-height: 30px;
+    margin-right: 10px;
+    overflow: hidden;
+    padding: 0 !important;
+    position: relative;
+    width: 30px;
+}
+
+.upload .checkbox:not(checked) + label > i,
+.upload .checkbox:not(checked) + label > i .pics_icons {
+    display: block;
+    height: 30px;
+    margin: -15px auto auto -15px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 30px;
+}
+
+.upload .checkbox:not(checked) + label > i .pics_icons {
+    fill: #eaf1f2;
+    height: 52px;
+    margin: -29px auto auto -26px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 52px;
+}
+
+.upload .checkbox:checked + label {
+    background-color: #2c4254;
+}
+
+.upload .checkbox:not(checked) + label::before,
+.upload .checkbox:not(checked) + label::after {content: none !important;}
+
+.upload > div a {
+    background: #5e7b94;
+    border-radius: 3px;
+    display: inline-block;
+    height: 30px;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+    width: 30px;
+}
+
+.upload > div a[style]{margin-left: 10px;}
+
+.upload > div a::after {
+    background-color: #5e7b94;
+    display: block;
+    content: '';
+    height: 30px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 30px;
+    z-index: 3;
+}
+
+.upload > div a > i {
+    display: block;
+    height: 30px;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 30px;
+    z-index: 4;
+}
+
+.upload > div a > i .pics_icons {
+    fill: #eaf1f2;
+    display: block;
+    height: 30px;
+    margin: -16px auto auto -14px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 30px;
+}
+
+.upload .return {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.upload .return > span {
+    background-color: #5e7b94;
+    border-radius: 3px;
+    color: #d8e4ea;
+    cursor: pointer;
+    display: block;
+    font-size: 0.9em;
+    font-weight: bold;
+    height: 30px;
+    line-height: 38px;
+    position: relative;
+    text-align: center;
+}
+
+.upload .return > span::before {
+    border: 6px solid transparent;
+    border-left-color: transparent !important;
+    border-right-color: transparent !important;
+    border-bottom-color: #deeaf0;
+    border-top-width: 0;
+    content: '';
+    display: block;
+    margin-left: -6px;
+    position: absolute;
+    top: 3px;
+    left: 50%;
+}
+
+.upload .return > span::after {
+    background: #deeaf0;
+    border-radius: 0 0 2px 2px;
+    content: '';
+    display: block;
+    height: 5px;
+    margin-left: -2px;
+    position: absolute;
+    top: 9px;
+    left: 50%;
+    width: 4px;
+}
+
+.upload > div img {
+    display: block;
+    height: auto;
+    max-width: 120px;
+}
+
+.upload strong {
+    background: #d4e5ea;
+    border-radius: 5px;
+    color: #a0adba;
+    cursor: pointer;
+    display: block;
+    height: 160px;
+    margin: 0 auto;
+    overflow: hidden !important;
+    position: relative;
+    text-decoration: none;
+    text-transform: uppercase;
+    width: 160px;
+}
+
+.upload strong > img {
+    height: 160px;
+    position: relative;
+    width: 160px;
+    z-index: 3;
+}
+
+.uploads .ready strong > img {opacity: 1;}
+
+.upload strong > i {
+    color: #7f9eac;
+    display: block;
+    font-size: 0.6em;
+    font-weight: bold;
+    height: 10px;
+    margin: -30px auto auto -30px;
+    overflow: hidden;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    padding-top: 55px;
+    text-align: center;
+    text-transform: uppercase;
+    width: 60px;
+}
+
+.upload strong > i .pics_icons {
+    fill: #7f9eac;
+    display: block;
+    height: 64px;
+    margin-left: -32px;
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    width: 64px;
+}
+
+.upload input[type="file"] {
+    border: none;
+    filter: alpha(opacity:0);
+    font-size: 9em;
+    margin: 0 0 0 -450px;
+    opacity: 0;
+    outline: none;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    z-index: 1000;
+}
+
+.upload strong > em {
+    display: block;
+    height: 100%;
+    opacity: .5;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 5;
+}
+
+.upload strong > span {
+    display: block;
+    font-size: 0.75em;
+    height: 45px;
+    line-height: 45px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    z-index: 4;
+}
+
+.uploads .ready strong > span {background: linear-gradient(to bottom, rgba(94,123,148,0) 0%,rgba(94,123,148,.3) 40%,rgba(94,123,148,1) 100%);}
+
+.upload > strong span span {
+    color: #FFF;
+    display: inline-block;
+    font-weight: bold;
+    height: 26px;
+    line-height: 40px;
+    overflow: hidden;
+    position: relative;
+    text-align: left;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    vertical-align: middle;
+}
+
+.upload > strong span img {
+    background-position: -204px -90px;
+    display: block;
+    margin-top: -8px;
+    position: absolute;
+    left: 10px;
+    top: 50%;
+}
+
+.upload > strong span b {
+    background: #FDDADA;
+    color: #000;
+    display: block;
+    font-weight: bold;
+    margin-left: -10px;
+    padding-left: 32px;
+}
+
+.uploads > span,
+.uploads > p {display: none;}
+
+/* -------------------------------------------------------- */
+
+
+@media only screen and (max-width: 1440px) {
+
+    #hiddenarea-edit > a {font-size: 1em;}
+
+    #hiddenarea-edit > a#hiddenarea-rotate-right,
+    #hiddenarea-edit > a#hiddenarea-rotate-left {font-size: 1.3em;}
+
+    .description,
+    .manual {font-size: 0.95em;}
+
+    .upload:not(:only-of-type) strong {
+        border-radius: 4px;
+        height: 140px;
+        width: 140px;
+    }
+
+    .upload:not(:only-of-type) strong > i {
+        margin: -25px auto auto -25px;
+        padding-top: 46px;
+        width: 50px;
+    }
+
+    .upload:not(:only-of-type) strong > i .pics_icons {
+        height: 54px;
+        margin-left: -27px;
+        top: -14px;
+        width: 54px;
+    }
+
+    .upload:not(:only-of-type) strong > img {
+        height: 140px !important;
+        width: 140px !important;
+    }
+
+    .upload:not(:only-of-type) strong > span {
+        font-size: 0.75em;
+        height: 35px;
+        line-height: 35px;
+    }
+
+    .upload:not(:only-of-type) > strong span span {line-height: 30px;}
+
+    .manual p {margin-top: 15px;}
+
+}
+
+@media only screen and (max-width: 700px) {
+
+    #jquery-overlay > i {display: none;}
+
+    #hiddenarea-edit > a {font-size: 0.95em;}
+
+    #hiddenarea-edit > a#hiddenarea-rotate-right,
+    #hiddenarea-edit > a#hiddenarea-rotate-left {font-size: 1.25em;}
+
+    .description,
+    .manual {font-size: 0.9em;}
+
+    .upload:not(:only-of-type) strong {
+        border-radius: 3px;
+        height: 120px;
+        width: 120px;
+    }
+
+    .upload:not(:only-of-type) strong > img {
+        height: 120px !important;
+        width: 120px !important;
+    }
+
+    .upload:not(:only-of-type) strong > span {font-size: 0.65em;}
+
+    .upload:only-child strong {margin: 0 auto;}
+
+    .upload:only-child > div {margin: 10px auto 0 auto;}
+
+    .manual p {margin-top: 10px;}
+
+}
+
+@media only screen and (max-width: 480px) {
+
+    #hiddenarea-edit > a {font-size: 0.9em;}
+
+    #hiddenarea-edit > a#hiddenarea-rotate-right,
+    #hiddenarea-edit > a#hiddenarea-rotate-left {font-size: 1.2em;}
+
+    .description,
+    .manual {font-size: 0.85em;}
+
+    .description {margin-bottom: 30px;}
+
+    .upload:not(:only-of-type) strong {
+        height: 90px;
+        width: 90px;
+    }
+
+    .upload:not(:only-of-type) strong > i {
+        font-size: 0.5em;
+        margin: -20px auto auto -20px;
+        padding-top: 36px;
+        width: 40px;
+    }
+
+    .upload:not(:only-of-type) strong > i .pics_icons {
+        height: 42px;
+        margin-left: -21px;
+        top: -12px;
+        width: 42px;
+    }
+
+    .upload:not(:only-of-type) strong > img {
+        height: 90px !important;
+        width: 90px !important;
+    }
+
+    .upload:not(:only-of-type) strong > span {
+        height: 25px;
+        line-height: 25px;
+    }
+
+    .upload:not(:only-of-type) > strong span span {line-height: 25px;}
+
+    .upload:not(:only-of-type) > div {height: 25px;}
+
+    .upload:not(:only-of-type) .checkbox:not(checked) + label {
+        background-size: 25px auto;
+        border-radius: 2px;
+        height: 25px;
+        line-height: 25px;
+        width: 25px;
+    }
+
+    .upload:not(:only-of-type) > div a {
+        border-radius: 4px;
+        height: 25px;
+        width: 25px;
+    }
+
+    .upload .checkbox:not(checked) + label > i,
+    .upload .checkbox:not(checked) + label > i .pics_icons {
+        height: 26px;
+        margin: -13px auto auto -13px;
+        width: 26px;
+    }
+
+    .upload .checkbox:not(checked) + label > i .pics_icons {
+        height: 46px;
+        margin: -25px auto auto -23px;
+        width: 46px;
+    }
+
+    .upload:not(:only-of-type) > div a > i {
+        height: 25px;
+        width: 25px;
+    }
+
+    .upload:not(:only-of-type) > div a > i .pics_icons {
+        height: 25px;
+        margin: -13px auto auto -11px;
+        width: 25px;
+    }
+
+
+    .upload:not(:only-of-type) > div a::after {
+        background-size: 25px auto;
+        height: 25px;
+        width: 25px;
+    }
+
+    .upload:not(:only-of-type) .return > span {
+        border-radius: 2px;
+        font-size: 0.75em;
+        height: 25px;
+        line-height: 32px;
+    }
+
+    .upload:not(:only-of-type) .return > span::before {
+        border: 5px solid transparent;
+        border-bottom-color: #deeaf0;
+        border-top-width: 0;
+        margin-left: -5px;
+    }
+
+    .upload:not(:only-of-type) .return > span::after {
+        height: 4px;
+        top: 8px;
+    }
+
+}
+
+@media only screen and (max-width: 360px) {
+
+    #hiddenarea-edit > a {
+        font-size: 0.85em;
+        margin: 0 5px 10px 5px;
+    }
+
+    #hiddenarea-edit > a#hiddenarea-rotate-right,
+    #hiddenarea-edit > a#hiddenarea-rotate-left {font-size: 1.15em;}
+
+    #hiddenarea-edit > a#hiddenarea-rotate-left {margin-right: 10px;}
+
+    .description,
+    .manual {font-size: 0.8em;}
+
+    .description p {
+        line-height: 1.2em;
+        margin-top: 15px;
+    }
+
+    .upload:not(:only-of-type) strong {
+        height: 70px;
+        width: 70px;
+    }
+
+    .upload:not(:only-of-type) strong > img {
+        height: 70px !important;
+        width: 70px !important;
+    }
+
+    .upload:not(:only-of-type) .return > span {font-size: 0.65em;}
+
+}
+
+@media only screen and (max-width: 290px) {
+
+    #hiddenarea-edit > a {font-size: 0.8em;}
+
+    #hiddenarea-edit > a#hiddenarea-rotate-right,
+    #hiddenarea-edit > a#hiddenarea-rotate-left {font-size: 1.1em;}
+
+    .uploads > div::before,
+    .uploads > div::after {content: none;}
+
+    .upload {
+        float: none;
+        margin: auto auto 20px auto;
+        width: 100%;
+    }
+
+    .upload:nth-last-child {margin-bottom: 0;}
+
+    .upload:not(:only-of-type) strong {
+        height: 160px;
+        width: 160px;
+    }
+
+    .upload:only-child strong {margin: 0 auto;}
+
+    .upload:not(:only-of-type) strong > i {
+        font-size: 0.6em;
+        margin: -30px auto auto -30px;
+        padding-top: 55px;
+        width: 60px;
+    }
+
+    .upload:not(:only-of-type) strong > i .pics_icons {
+        height: 64px;
+        margin-left: -32px;
+        top: -14px;
+        width: 64px;
+    }
+
+    .upload:not(:only-of-type) strong > img {
+        height: 160px !important;
+        width: 160px !important;
+    }
+
+    .upload:not(:only-of-type) strong > span {
+        font-size: 0.75em;
+        height: 45px;
+        line-height: 45px;
+    }
+
+    .upload:not(:only-of-type) > strong span span {line-height: 40px;}
+
+    .upload:only-child > div {
+        margin: 10px auto 0 auto;
+        width: 160px;
+    }
+
+    .upload:not(:only-of-type) > div {height: 30px;}
+
+    .upload:not(:only-of-type) .checkbox:not(checked) + label {
+        background-size: inherit;
+        border-radius: 3px;
+        height: 30px;
+        line-height: 30px;
+        width: 30px;
+    }
+
+    .upload:not(:only-of-type) > div a {
+        border-radius: 3px;
+        height: 30px;
+        width: 30px;
+    }
+
+    .upload .checkbox:not(checked) + label > i,
+    .upload .checkbox:not(checked) + label > i .pics_icons {
+        height: 30px;
+        margin: -15px auto auto -15px;
+        width: 30px;
+    }
+
+    .upload .checkbox:not(checked) + label > i .pics_icons {
+        height: 52px;
+        margin: -29px auto auto -26px;
+        width: 52px;
+    }
+
+    .upload > div a > i {
+        height: 30px;
+        width: 30px;
+    }
+
+    .upload > div a > i .pics_icons {
+        height: 30px;
+        margin: -16px auto auto -14px;
+        width: 30px;
+    }
+
+    .upload:not(:only-of-type) > div a::after {
+        background-size: inherit;
+        height: 30px;
+        width: 30px;
+    }
+
+    .upload .return > span {
+        border-radius: 3px;
+        font-size: 0.9em;
+        height: 30px;
+        line-height: 38px;
+    }
+
+    .upload .return > span::before {
+        border: 6px solid transparent;
+        border-bottom-color: #deeaf0;
+        border-top-width: 0;
+        margin-left: -6px;
+    }
+
+    .upload .return > span::after {
+        height: 5px;
+        top: 9px;
+    }
+
+}
