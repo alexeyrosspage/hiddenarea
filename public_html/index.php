@@ -87,7 +87,6 @@ serverStorage['TEMP_URL']='".TEMP_URL."';";
 include 'index_html.php';
 define ('CLOSE','NORMAL');
 exit;
-exit;
 
 function classAutoload($class){
     $file=PUBLIC_DIR.'classes/'.$class.'.php';
