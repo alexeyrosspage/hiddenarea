@@ -25,6 +25,8 @@ else
     define ('TEMP_DIR',TEMP.'/server');
 }
 
+
+
 define ('TEMP_PATH',PUBLIC_DIR.TEMP_DIR.'/');
 
 define ('STATICS_DIR','statics');
