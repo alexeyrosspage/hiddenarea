@@ -69,7 +69,7 @@ $lngs=
         0=>[
             'str1'=>'«HiddenArea» is a JQuery Plugin for watching and editing images with some unusual option: you can select any areas of your picture and hide them with a blur. You also can rotate your images clockwise and counterclockwise. «HiddenArea» allows you to save images on server safely, load them from it for editing and cache them through file names (not through GET parameters).',
             'str2'=>'«HiddenArea» is a useful tool for all progects with user\'s content like a social media, marketplaces, classified ads, medical applications for self-diagnosis and other cases when user want to control the level of privacy on their images.',
-            'str3'=>'«HiddenArea» works on touch screens too! Have a nice day! ;)'
+            'str3'=>'«HiddenArea» works on touch screens too! Have a nice day!;)'
         ],
         1=>[
             'str1'=>'jQuery плагин «HiddenArea» к классическим опциям редактирования картинок добавляет ещё одну, не совсем  обычную: возможность скрывать выделенные области изображения наложенным блюром. Плагин также позволяет поворачивать картинки. «HiddenArea» безопасно сохраняет изображения на сервере, загружает их оттуда для редактирования и кеширует через имена файлов (а не через GET-параметры).',
