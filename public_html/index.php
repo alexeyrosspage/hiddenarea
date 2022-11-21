@@ -10,7 +10,7 @@ spl_autoload_register('classAutoload');//функции автоподгрузк
 register_shutdown_function('shutDown');//запуск функции после завершения скрипта
 set_error_handler('systemError');//перехват системных ошибок
 
-define ('D1', dirname(__DIR__) . 'index.php/');
+define ('D1', dirname(__DIR__) . '/');
 define ('PUBLIC_DIR',D1.'public_html/');
 define ('MDIR', basename(D1));
 
@@ -68,13 +68,15 @@ $lngs=
     [
         0=>[
             'str1'=>'«HiddenArea» is a JQuery Plugin for watching and editing images with some unusual option: you can select any areas of your picture and hide them with a blur. You also can rotate your images clockwise and counterclockwise. «HiddenArea» allows you to save images on server safely, load them from it for editing and cache them through file names (not through GET parameters).',
-            'str2'=>'«HiddenArea» is a useful tool for all progects with user\'s content like a social media, marketplaces, classified ads, medical applications for self-diagnosis and other cases when user want to control the level of privacy on their images.',
-            'str3'=>'«HiddenArea» works on touch screens too! Have a nice day!;)'
+            'str2'=>'«HiddenArea» is a useful tool for all projects with user\'s content like a social media, marketplaces, classified ads, medical applications for self-diagnosis and other cases when user want to control the level of privacy on their images.',
+            'str3'=>'«HiddenArea» works on touch screens too!',
+            'str4'=>'See on <a href="https://github.com/alexrosspage/hiddenarea" target="_blank">GitHub</a>'
         ],
         1=>[
             'str1'=>'jQuery плагин «HiddenArea» к классическим опциям редактирования картинок добавляет ещё одну, не совсем  обычную: возможность скрывать выделенные области изображения наложенным блюром. Плагин также позволяет поворачивать картинки. «HiddenArea» безопасно сохраняет изображения на сервере, загружает их оттуда для редактирования и кеширует через имена файлов (а не через GET-параметры).',
             'str2'=>'«HiddenArea» — полезный инструмент для всех проектов с пользовательским контентом, таких, как социальные сети, маркетплейсы, доски объявлений, медицинские приложения для самодиагностики — в целом любые кейсы, где пользователю важно контролировать уровень конфиденциальности своих изображений.',
-            'str3'=>'«HiddenArea» также работает на тачскринах!'
+            'str3'=>'«HiddenArea» также работает на тачскринах!',
+            'str4'=>'Cмотри на <a href="https://github.com/alexrosspage/hiddenarea" target="_blank">GitHub</a>'
         ]
     ];
 
@@ -105,7 +107,7 @@ function systemError($type, $message, $file, $line)//функция перехв
         header('Status: 503 Service Temporarily Unavailable');
         header("Connection: Close");
         file_put_contents(PUBLIC_DIR.'last_php_error.php','CLOSE: '.$type.' '.$message.' '.$file.': '.$line,LOCK_EX);
-        
+
         define('CLOSE','ERROR');
     }
     exit;
@@ -129,7 +131,7 @@ function last_directory_cleanup($days)
     {
         $file_cleanup_diff=$file_cleanup_diff-$data;
     }
-    
+
     if($file_cleanup_diff>$max_seconds_all)
     {
         $ddir=opendir(PUBLIC_DIR.TEMP.'/');//открываем каталог
@@ -137,12 +139,12 @@ function last_directory_cleanup($days)
         while(($file=readdir($ddir))!==false)// считываем каталог
         {
             $ip_dir=PUBLIC_DIR.TEMP.'/'.$file;//определяем путь к каталогу или файлу
-            
+
             if(!is_dir($ip_dir))
             {
                 continue;
             }
-            
+
             if((time()-filemtime($ip_dir))>$max_seconds_direct)
             {
                 $i++;

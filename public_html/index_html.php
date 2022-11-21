@@ -24,6 +24,7 @@
 			<p><?=$lngs[$lng]['str1']?></p>
 			<p><?=$lngs[$lng]['str2']?></p>
 			<p><?=$lngs[$lng]['str3']?></p>
+            <p><?=$lngs[$lng]['str4']?></p>
 		</div>
 		<div class="uploads" id="hiddenarea" data-number="3" data-message="Мы рекомендуем не загружать фото с изображением где присутвуют номера документов, машин, лица детей и т.д. "></div>
 	</div>

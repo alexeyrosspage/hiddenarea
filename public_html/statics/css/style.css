@@ -496,6 +496,12 @@ textarea {font-family:  'Arial Narrow', Arial, sans-serif;}
     margin-top: 30px;
 }
 
+.description p > a {
+    color: #0b8693;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
 .uploads {
     background: #eaf1f2;
     border-radius: 10px;
