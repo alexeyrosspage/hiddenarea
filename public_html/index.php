@@ -90,6 +90,7 @@ include 'index_html.php';
 define ('CLOSE','NORMAL');
 exit;
 
+
 function classAutoload($class){
     $file=PUBLIC_DIR.'classes/'.$class.'.php';
     if(is_file($file))
