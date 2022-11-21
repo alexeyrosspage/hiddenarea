@@ -1,0 +1,1 @@
+CLOSE: 8 Undefined index: str4 W:\domains\hiddenarea\public_html\index_html.php: 27
