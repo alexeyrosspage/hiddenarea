@@ -112,7 +112,7 @@ function systemError($type, $message, $file, $line)//функция перехв
         header('Status: 503 Service Temporarily Unavailable');
         header("Connection: Close");
         file_put_contents(PUBLIC_DIR.'last_php_error.php','CLOSE: '.$type.' '.$message.' '.$file.': '.$line,LOCK_EX);
-
+        
         define('CLOSE','ERROR');
     }
     exit;
@@ -136,7 +136,7 @@ function last_directory_cleanup($days)
     {
         $file_cleanup_diff=$file_cleanup_diff-$data;
     }
-
+    
     if($file_cleanup_diff>$max_seconds_all)
     {
         $ddir=opendir(PUBLIC_DIR.TEMP.'/');//открываем каталог
@@ -144,12 +144,12 @@ function last_directory_cleanup($days)
         while(($file=readdir($ddir))!==false)// считываем каталог
         {
             $ip_dir=PUBLIC_DIR.TEMP.'/'.$file;//определяем путь к каталогу или файлу
-
+            
             if(!is_dir($ip_dir))
             {
                 continue;
             }
-
+            
             if((time()-filemtime($ip_dir))>$max_seconds_direct)
             {
                 $i++;
