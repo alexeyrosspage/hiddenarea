@@ -454,9 +454,9 @@ textarea {font-family:  'Arial Narrow', Arial, sans-serif;}
     border-radius: 10px;
     color: #5e7b94;
     font-size: 1em;
-    margin: 0 auto 40px auto;
+    margin: 0 auto 20px auto;
     max-width: 800px;
-    padding: 18px;
+    padding: 36px 18px;
     text-align: center;
 }
 
@@ -509,7 +509,8 @@ textarea {font-family:  'Arial Narrow', Arial, sans-serif;}
 .description p > a > svg {height: 22px;}
 
 .uploads {
-    background: #eaf1f2;
+    /*background: #eaf1f2;*/
+    background: #f2f7f7;
     border-radius: 10px;
     /*margin: 20px 2.94985250737463% 40px 2.94985250737463%;*/
     margin: 0 auto;
