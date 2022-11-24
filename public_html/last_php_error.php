@@ -1,1 +1,1 @@
-CLOSE: 8 Undefined index: str4 W:\domains\hiddenarea\public_html\index_html.php: 27
+CLOSE: 2 Use of undefined constant LOCALHOST - assumed 'LOCALHOST' (this will throw an Error in a future version of PHP) W:\domains\hiddenarea\public_html\classes\imgChange.php: 17

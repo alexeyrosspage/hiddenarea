@@ -4,15 +4,23 @@ header('Content-Type: text/html; charset=utf-8');
 mb_internal_encoding('UTF-8');
 setlocale(LC_ALL, 'ru_RU.UTF-8');
 setlocale(LC_NUMERIC, 'C');
-session_start();
 
 spl_autoload_register('classAutoload');//функции автоподгрузки
 register_shutdown_function('shutDown');//запуск функции после завершения скрипта
 set_error_handler('systemError');//перехват системных ошибок
 
 define ('D1', dirname(__DIR__) . '/');
-define ('PUBLIC_DIR',D1.'public_html/');
-define ('MDIR', basename(D1));
+define ('PUBLIC_DIR',getcwd().'/');
+
+if(is_dir(D1.'.idea'))//это LOCALHOST
+{
+    define ('MDIR', basename(D1));
+}
+else
+{
+    define ('MDIR', 'hiddenarea.epizy.com');
+}
+
 
 define ('TEMP','temp');
 
@@ -25,13 +33,10 @@ else
     define ('TEMP_DIR',TEMP.'/server');
 }
 
-
-
 define ('TEMP_PATH',PUBLIC_DIR.TEMP_DIR.'/');
 
 define ('STATICS_DIR','statics');
 define ('STATICS_PATH',PUBLIC_DIR.STATICS_DIR.'/');
-
 define ('HDIR','http://');
 define('MAIN_URL',HDIR.MDIR.'/');
 define('TEMP_URL',MAIN_URL.TEMP_DIR.'/');

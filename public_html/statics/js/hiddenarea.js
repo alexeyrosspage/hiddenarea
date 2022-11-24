@@ -52,6 +52,7 @@ let lngs={
             'cancel':'Cancel',
             'save':'Save changes',
             'close':'Close',
+            'return':'return',
             'delete':'Delete the image',
             'str_about':'Sometimes you need to hide some fragments of your image: faces, private information in your documents, details of your location and adress or unsightly background.',
             'str_steps':'You can do this in three easy steps:',
@@ -69,6 +70,7 @@ let lngs={
             'cancel':'Отменить',
             'save':'Сохранить изменения',
             'close':'Закрыть',
+            'return':'Вернуть',
             'delete':'Удалить изображение',
             'str_about':'Иногда вам нужно скрыть некоторые фрагменты вашего изображения: лица, личную информацию из ваших документов, детали вашего местоположения и адреса или неприглядный фон.',
             'str_steps':'Вы можете сделать это в три простых шага:',
@@ -152,7 +154,7 @@ let lngs={
                     '<a href="#" data-id="' + id + '"><img src="' + TGIF + '" height="30" width="30"><i><svg class="pics_icons"><use xlink:href="' + serverStorage['STATICS_URL'] + 'img/svg/blank_spryte.svg#editphoto_icon"></use></svg></i></a>' +
                     '</div>' +
                     '<div class="return" style="display:none;">' +
-                    '<span>return</span>' +
+                    '<span>'+lngs[lng]['return']+'</span>' +
                     '</div>' +
                     '</div>' +
                     '</div>';

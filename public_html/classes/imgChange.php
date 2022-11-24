@@ -8,8 +8,13 @@ final class imgChange extends imgSett
                 'error' => '',
                 'result' => ''
             ];
-
-        if ((!isset($post['original_pic'])) || (!$parse = parse_url($post['original_pic'])) || (empty($parse['host'])) || (empty($parse['path'])) || ($parse['host']!=MDIR))
+    
+    
+        if ((!isset($post['original_pic']))
+            || (!$parse = parse_url($post['original_pic']))
+            || (empty($parse['host']))
+            || (empty($parse['path']))
+            || ($parse['host']!=MDIR))
         {
             $R['error']='Некорректный URL[1]';
             return $R;
