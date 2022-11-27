@@ -16,7 +16,7 @@
 Script connection:
 ```
 <script defer src="jquery_2.2.4.min.js"></script>
-<--!<script defer src="main.js"></script> Helper functions can be defined here -->
+<!--<script defer src="main.js"></script> Helper functions can be defined here -->
 <script defer src="hiddenarea.js"></script>
 ```
 Plugin connection in script:
