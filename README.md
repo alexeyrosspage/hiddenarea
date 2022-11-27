@@ -37,7 +37,7 @@ this line and then no messages will be displayed
 ### Plugin settings
 Plugin settings are defined by the «option» variable. The variable option is an object, with the following keys:
 
-option['message'] - Message under the block, pictures. The default is empty.
+![#1589F0]option['message']`#1589F0` - Message under the block, pictures. The default is empty.
 
 option['megabyte'] - The maximum image size in megabytes. The default is 5 megabytes.
 
