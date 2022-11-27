@@ -13,6 +13,27 @@
 ***
 ## Setting
 ### Plugin connection
+Script connection:
+```
+<script defer src="jquery_2.2.4.min.js"></script>
+<--!<script defer src="main.js"></script> Helper functions can be defined here -->
+<script defer src="hiddenarea.js"></script>
+```
+Plugin connection in script:
+```
+$(document).ready(function ()
+{
+ $('#hiddenarea').hiddenarea(
+     {
+         'number': 3,
+         'message': 'Text below plugin'
+     });
+});
+```
+Plugin connection in HTML:
+```
+<div class="uploads"></div>
+```
 ### Plugin settings
 Plugin settings are defined by the «option» variable. The variable option is an object, with the following keys:
 ```
