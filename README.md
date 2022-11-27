@@ -36,12 +36,13 @@ this line and then no messages will be displayed
 ```
 ### Plugin settings
 Plugin settings are defined by the «option» variable. The variable option is an object, with the following keys:
-$${\color{red}Red}$$
-<span color="red">option['message']</span> - Message under the block, pictures. The default is empty.
+```diff
+@@ text in purple (and bold)option['message']@@ - Message under the block, pictures. The default is empty.
 
 option['megabyte'] - The maximum image size in megabytes. The default is 5 megabytes.
 
 option['number'] - The number of images in the block. The default is one picture.
+```
 ***
 ## License
 MIT
