@@ -29,10 +29,12 @@ $(document).ready(function ()
          'message': 'Text below plugin'
      });
 });
+or directly in the body of the page, leaving the default settings
+<script>$('#hiddenarea').hiddenarea();</script>
 ```
-Plugin connection in HTML:
+Plugin connection in HTML. You can connect the plugin several times on the page, the script will look for elements with the class "upload":
 ```
-<div class="uploads"></div>
+<div class="uploads" id="hiddenarea"></div>
 ```
 ### Plugin settings
 Plugin settings are defined by the «option» variable. The variable option is an object, with the following keys:
