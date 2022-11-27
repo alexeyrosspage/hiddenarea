@@ -6,7 +6,7 @@ if(typeof (saveError)=='undefined')
     {
         if(typeof (error['message'])!='undefined' && typeof (error['line'])!='undefined')
         {
-            alert('HiddenAres error. '+error['message']+': '+error['line']);//
+            alert('HiddenAres error. '+error['message']+': '+error['line']);
         }
     }
 }
