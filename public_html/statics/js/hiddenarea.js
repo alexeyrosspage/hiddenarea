@@ -4,7 +4,10 @@ if(typeof (saveError)=='undefined')
 {
     var saveError=function (error)
     {
-        alert('HiddenAres error. '+error['message']+': '+error['line']);
+        if(typeof (error['message'])!='undefined' && typeof (error['line'])!='undefined')
+        {
+            alert('HiddenAres error. '+error['message']+': '+error['line']);//
+        }
     }
 }
 
@@ -12,7 +15,9 @@ if(typeof ($.Tip)=='undefined')
 {
     $.fn.Tip=function (error)
     {
-        alert('HiddenAres/Tip is empty');
+        if(typeof (error['text'])!='undefined'){
+            alert(error['text']);
+        }
     }
 }
 
@@ -70,7 +75,7 @@ let lngs={
             'cancel':'Отменить',
             'save':'Сохранить изменения',
             'close':'Закрыть',
-            'return':'Вернуть',
+            'return':'вернуть',
             'delete':'Удалить изображение',
             'str_about':'Иногда вам нужно скрыть некоторые фрагменты вашего изображения: лица, личную информацию из ваших документов, детали вашего местоположения и адреса или неприглядный фон.',
             'str_steps':'Вы можете сделать это в три простых шага:',
@@ -127,10 +132,14 @@ let lngs={
                 options['message'] = '';
             }
 
-
             if (!options['megabyte'])
             {
                 options['megabyte'] = 5;
+            }
+
+            if (!options['number'])
+            {
+                options['number'] = 1;
             }
 
             let htmlblock = '';
@@ -174,7 +183,6 @@ let lngs={
                 gallery = hiddenarea_block.find('a'),//набор ссылок
                 buttons = hiddenarea_block.find('input[type="file"]');//набор кнопок загрузки
 
-
             autoLoad(buttons);
 
             function picSetting(modified_href)
@@ -205,7 +213,7 @@ let lngs={
                                 'top': 0
                             };
 
-                        if (value == modified_href)
+                        if (value === modified_href)
                         {
                             currentPic = i;
                         }
@@ -269,7 +277,7 @@ let lngs={
                 obj = null;
                 buttons.each(function ()
                 {
-                    if ($(this).data('id') == id)
+                    if ($(this).data('id') === id)
                     {
                         obj = objectsOfButton($(this));
                     }
@@ -282,7 +290,7 @@ let lngs={
                 obj = null;
                 gallery.each(function ()
                 {
-                    if ($(this).data('id') == id)
+                    if ($(this).data('id') === id)
                     {
                         obj =
                             {
@@ -462,11 +470,6 @@ let lngs={
             function setInterface(deleted)
             {
                 let picDelete = '';
-                if (options['online'])
-                {
-                    picDelete = '<a href="#" id="hiddenarea-delete" title="Delete the image" style="padding-left: 20px;font-size: 0.9em;color:Red">'+lngs[lng]['delete']+'</a>';
-                }
-
                 let term = '';
                 if (touchScreenIsOn)
                 {
@@ -573,9 +576,7 @@ let lngs={
 
                 let
                     containerResizeSpeed = 400,// Скорость изменения контейнера
-                    margin,
-                    intCurrentWidth = $('#hiddenarea-container-image-box').width(),//текущая ширина
-                    intCurrentHeight = $('#hiddenarea-container-image-box').height();//текущая высота
+                    margin;
 
                 if ((newPicWidth > PageSize['pageWidth']))//ширина новой картинки больше ширины контейнера
                 {
@@ -748,7 +749,8 @@ let lngs={
 
             function setControl()//Панель навигации по картинкам
             {
-                $('#hiddenarea-nav').show();
+                let hiddenarea_nav=$('#hiddenarea-nav');
+                hiddenarea_nav.show();
 
                 setNavigation();
 
@@ -762,8 +764,8 @@ let lngs={
                     return obj;
                 }
 
-                $('#hiddenarea-nav').unbind('touchstart').unbind('touchmove').unbind('touchend').unbind('touchcancel');
-                $('#hiddenarea-nav').on('touchstart', function (e)
+                hiddenarea_nav.unbind('touchstart').unbind('touchmove').unbind('touchend').unbind('touchcancel');
+                hiddenarea_nav.on('touchstart', function (e)
                 {
                     let
                         nav = $(this),
@@ -790,14 +792,16 @@ let lngs={
                         return false;
                     }
 
-                    if ($('#hiddenarea-blur').length)
+                    let hiddenarea_blur=$('#hiddenarea-blur');
+
+                    if (hiddenarea_blur.length)
                     {
-                        $('#hiddenarea-blur').remove();
+                        hiddenarea_blur.remove();
                         return false;
                     }
 
                     body.append('<div id="hiddenarea-blur"></div>');
-                    $('#hiddenarea-blur').css({'position': 'absolute', 'z-index': 9999, 'backgroundColor': 'black', 'opacity': '0.5', 'border': '1px dashed yellow'});
+                    hiddenarea_blur.css({'position': 'absolute', 'z-index': 9999, 'backgroundColor': 'black', 'opacity': '0.5', 'border': '1px dashed yellow'});
 
                     nav.on('touchcancel', function (e)
                     {
@@ -849,7 +853,7 @@ let lngs={
                         e.stopPropagation();
                     });
 
-                    $('#hiddenarea-blur').click(function ()
+                    hiddenarea_blur.click(function ()
                     {
                         $(this).css({'background-image': 'url(' + serverStorage["STATICS_URL"] + 'img/selection.gif)', 'opacity': '0.5'});
 
@@ -1105,12 +1109,7 @@ let lngs={
 
                 $('#hiddenarea-save').unbind().show().bind('click', function ()
                 {
-                    if (!options['online'])
-                    {
-                        options['online'] = 0;
-                    }
-
-                    $.post(serverStorage['MAIN_URL'], createAjaxObject({'change': 'save', 'online': options['online']}), function (data)
+                    $.post(serverStorage['MAIN_URL'], createAjaxObject({'change': 'save'}), function (data)
                     {
                         try
                         {
@@ -1263,12 +1262,6 @@ let lngs={
                         'cursor': 'pointer',
                         'margin-top': 0
                     });
-
-
-                if(options['fast'])//быстрое редактирование
-                {
-                    return true;
-                }
 
                 if (servers['double'])
                 {
