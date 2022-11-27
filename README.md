@@ -36,13 +36,13 @@ this line and then no messages will be displayed
 ```
 ### Plugin settings
 Plugin settings are defined by the «option» variable. The variable option is an object, with the following keys:
-```diff
-+option['message']+ - Message under the block, pictures. The default is empty.
+- ![#f03c15](https://placehold.co/15x15/f03c15/f03c15.png) `#f03c15`
+option['message'] - Message under the block, pictures. The default is empty.
 
-+option['megabyte']+ - The maximum image size in megabytes. The default is 5 megabytes.
+option['megabyte'] - The maximum image size in megabytes. The default is 5 megabytes.
 
-+option['number']+ - The number of images in the block. The default is one picture.
-```
+option['number'] - The number of images in the block. The default is one picture.
+
 ***
 ## License
 MIT
