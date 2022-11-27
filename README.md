@@ -12,7 +12,17 @@
 **Demo**: [http://hiddenarea.epizy.com](http://hiddenarea.epizy.com/)
 ***
 ## Setting
-### Helper functions that can be defined before plugin initialization.
+### Plugin connection
+### Plugin settings
+Plugin settings are defined by the «option» variable. The variable option is an object, with the following keys:
+```
+option['message'];// Message under the block, pictures. The default is empty.
+
+option['megabyte'];// The maximum image size in megabytes. The default is 5 megabytes.
+
+option['number'];// The number of images in the block. The default is one picture.
+```
+### Plugin helper functions that can be defined before connecting in the plugin.
 1. saveError. 
 This function is to show and/or send an error to the server. By default (if the function is not defined above), the function will display an error on the browser screen through the «alert» command.
 ```
@@ -33,15 +43,6 @@ This function is needed to show hints and the result of your actions. By default
 this line and then no messages will be displayed
         }
     }
-```
-### Plugin settings
-Plugin settings are defined by the «option» variable. The variable option is an object, with the following keys:
-```
-option['message'];// Message under the block, pictures. The default is empty.
-
-option['megabyte'];// The maximum image size in megabytes. The default is 5 megabytes.
-
-option['number'];// The number of images in the block. The default is one picture.
 ```
 
 ***
