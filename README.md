@@ -41,6 +41,8 @@ or directly in the body of the page, leaving the default settings
 #### Plugin settings
 Plugin settings are defined by the «option» variable. The variable option is an object, with the following keys:
 ```
+options = options || {}; //plugin configuration option
+
 option['message'];// Message under the block, pictures. The default is empty.
 
 option['megabyte'];// The maximum image size in megabytes. The default is 5 megabytes.
