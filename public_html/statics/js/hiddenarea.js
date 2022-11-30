@@ -4,10 +4,7 @@ if(typeof (saveError)=='undefined')
 {
     var saveError=function (error)
     {
-        if(typeof (error['message'])!='undefined' && typeof (error['line'])!='undefined')
-        {
-            alert('HiddenAres error. '+error['message']+': '+error['line']);
-        }
+        alert('HiddenAres error. '+error['message']+': '+error['line']);
     }
 }
 
@@ -15,9 +12,7 @@ if(typeof ($.Tip)=='undefined')
 {
     $.fn.Tip=function (error)
     {
-        if(typeof (error['text'])!='undefined'){
-            alert(error['text']);
-        }
+        alert('HiddenAres/Tip is empty');
     }
 }
 
@@ -57,7 +52,6 @@ let lngs={
             'cancel':'Cancel',
             'save':'Save changes',
             'close':'Close',
-            'return':'return',
             'delete':'Delete the image',
             'str_about':'Sometimes you need to hide some fragments of your image: faces, private information in your documents, details of your location and adress or unsightly background.',
             'str_steps':'You can do this in three easy steps:',
@@ -75,7 +69,6 @@ let lngs={
             'cancel':'Отменить',
             'save':'Сохранить изменения',
             'close':'Закрыть',
-            'return':'вернуть',
             'delete':'Удалить изображение',
             'str_about':'Иногда вам нужно скрыть некоторые фрагменты вашего изображения: лица, личную информацию из ваших документов, детали вашего местоположения и адреса или неприглядный фон.',
             'str_steps':'Вы можете сделать это в три простых шага:',
@@ -132,14 +125,10 @@ let lngs={
                 options['message'] = '';
             }
 
+
             if (!options['megabyte'])
             {
                 options['megabyte'] = 5;
-            }
-
-            if (!options['number'])
-            {
-                options['number'] = 1;
             }
 
             let htmlblock = '';
@@ -163,7 +152,7 @@ let lngs={
                     '<a href="#" data-id="' + id + '"><img src="' + TGIF + '" height="30" width="30"><i><svg class="pics_icons"><use xlink:href="' + serverStorage['STATICS_URL'] + 'img/svg/blank_spryte.svg#editphoto_icon"></use></svg></i></a>' +
                     '</div>' +
                     '<div class="return" style="display:none;">' +
-                    '<span>'+lngs[lng]['return']+'</span>' +
+                    '<span>return</span>' +
                     '</div>' +
                     '</div>' +
                     '</div>';
@@ -182,6 +171,7 @@ let lngs={
             let
                 gallery = hiddenarea_block.find('a'),//набор ссылок
                 buttons = hiddenarea_block.find('input[type="file"]');//набор кнопок загрузки
+
 
             autoLoad(buttons);
 
@@ -213,7 +203,7 @@ let lngs={
                                 'top': 0
                             };
 
-                        if (value === modified_href)
+                        if (value == modified_href)
                         {
                             currentPic = i;
                         }
@@ -277,7 +267,7 @@ let lngs={
                 obj = null;
                 buttons.each(function ()
                 {
-                    if ($(this).data('id') === id)
+                    if ($(this).data('id') == id)
                     {
                         obj = objectsOfButton($(this));
                     }
@@ -290,7 +280,7 @@ let lngs={
                 obj = null;
                 gallery.each(function ()
                 {
-                    if ($(this).data('id') === id)
+                    if ($(this).data('id') == id)
                     {
                         obj =
                             {
@@ -470,6 +460,11 @@ let lngs={
             function setInterface(deleted)
             {
                 let picDelete = '';
+                if (options['online'])
+                {
+                    picDelete = '<a href="#" id="hiddenarea-delete" title="Delete the image" style="padding-left: 20px;font-size: 0.9em;color:Red">'+lngs[lng]['delete']+'</a>';
+                }
+
                 let term = '';
                 if (touchScreenIsOn)
                 {
@@ -576,7 +571,9 @@ let lngs={
 
                 let
                     containerResizeSpeed = 400,// Скорость изменения контейнера
-                    margin;
+                    margin,
+                    intCurrentWidth = $('#hiddenarea-container-image-box').width(),//текущая ширина
+                    intCurrentHeight = $('#hiddenarea-container-image-box').height();//текущая высота
 
                 if ((newPicWidth > PageSize['pageWidth']))//ширина новой картинки больше ширины контейнера
                 {
@@ -749,8 +746,7 @@ let lngs={
 
             function setControl()//Панель навигации по картинкам
             {
-                let hiddenarea_nav=$('#hiddenarea-nav');
-                hiddenarea_nav.show();
+                $('#hiddenarea-nav').show();
 
                 setNavigation();
 
@@ -764,8 +760,8 @@ let lngs={
                     return obj;
                 }
 
-                hiddenarea_nav.unbind('touchstart').unbind('touchmove').unbind('touchend').unbind('touchcancel');
-                hiddenarea_nav.on('touchstart', function (e)
+                $('#hiddenarea-nav').unbind('touchstart').unbind('touchmove').unbind('touchend').unbind('touchcancel');
+                $('#hiddenarea-nav').on('touchstart', function (e)
                 {
                     let
                         nav = $(this),
@@ -792,16 +788,14 @@ let lngs={
                         return false;
                     }
 
-                    let hiddenarea_blur=$('#hiddenarea-blur');
-
-                    if (hiddenarea_blur.length)
+                    if ($('#hiddenarea-blur').length)
                     {
-                        hiddenarea_blur.remove();
+                        $('#hiddenarea-blur').remove();
                         return false;
                     }
 
                     body.append('<div id="hiddenarea-blur"></div>');
-                    hiddenarea_blur.css({'position': 'absolute', 'z-index': 9999, 'backgroundColor': 'black', 'opacity': '0.5', 'border': '1px dashed yellow'});
+                    $('#hiddenarea-blur').css({'position': 'absolute', 'z-index': 9999, 'backgroundColor': 'black', 'opacity': '0.5', 'border': '1px dashed yellow'});
 
                     nav.on('touchcancel', function (e)
                     {
@@ -853,7 +847,7 @@ let lngs={
                         e.stopPropagation();
                     });
 
-                    hiddenarea_blur.click(function ()
+                    $('#hiddenarea-blur').click(function ()
                     {
                         $(this).css({'background-image': 'url(' + serverStorage["STATICS_URL"] + 'img/selection.gif)', 'opacity': '0.5'});
 
@@ -1109,7 +1103,12 @@ let lngs={
 
                 $('#hiddenarea-save').unbind().show().bind('click', function ()
                 {
-                    $.post(serverStorage['MAIN_URL'], createAjaxObject({'change': 'save'}), function (data)
+                    if (!options['online'])
+                    {
+                        options['online'] = 0;
+                    }
+
+                    $.post(serverStorage['MAIN_URL'], createAjaxObject({'change': 'save', 'online': options['online']}), function (data)
                     {
                         try
                         {
@@ -1262,6 +1261,12 @@ let lngs={
                         'cursor': 'pointer',
                         'margin-top': 0
                     });
+
+
+                if(options['fast'])//быстрое редактирование
+                {
+                    return true;
+                }
 
                 if (servers['double'])
                 {
